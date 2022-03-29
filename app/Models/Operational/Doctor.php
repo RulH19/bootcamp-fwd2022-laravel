@@ -31,4 +31,16 @@ class Doctor extends Model
         'updated_at',
         'deleted_at',
     ];
+     //membuat function berdasarkan tabel yang berhubungan dengan hasmany
+     public function specialist(){
+        //mendeklarasikan tipe dari table
+        return $this->belongsTo('App\Models\MasterData\Specialist','specialist_id','id');
+        //mendeklarasikan belongsto sebagai hubungan dengan hasmay dengan 3 paramater
+        // 1. lokasi path tabel berada, 2. field dari path tujuan, 3. field yang akan di hubungkan dengan field path
+        
+
+    }
+    public function appointment(){
+        return $this->hasMany('App\Models\Operational\Appointment','doctor_id');
+    }
 }

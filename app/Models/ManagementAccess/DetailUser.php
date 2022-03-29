@@ -33,4 +33,19 @@ class DetailUser extends Model
         'updated_at',
         'deleted_at',
     ];
+    //membuat function berdasarkan tabel yang berhubungan dengan hasmany
+    public function type_user(){
+        //mendeklarasikan tipe dari table
+        return $this->belongsTo('App\Models\MasterData\TypeUser','type_user_id','id');
+        //mendeklarasikan belongsto sebagai hubungan dengan hasmay dengan 3 paramater
+        // 1. lokasi path tabel berada, 2. field dari path tujuan, 3. field yang akan di hubungkan dengan field path
+    }
+    public function user(){
+        //mendeklarasikan tipe dari table
+        return $this->belongsTo('App\Models\User','user_id','id');
+        //mendeklarasikan belongsto sebagai hubungan dengan hasmay dengan 3 paramater
+        // 1. lokasi path tabel berada, 2. field dari path tujuan, 3. field yang akan di hubungkan dengan field path
+    }
+    
+
 }

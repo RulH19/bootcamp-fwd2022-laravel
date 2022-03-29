@@ -29,4 +29,10 @@ class Specialist extends Model
         'updated_at',
         'deleted_at',
     ];
+    public function doctor(){
+        //mendeklarasikan tipe dari table
+        return $this->hasMany('App\Models\Operational\Doctor','specialist_id');
+        //memberikan parameter pertama lokasi dari tabel yang di tuju dan parameter yang kedua memerikan parameter tujuan field yang di tuju
+        
+    }
 }

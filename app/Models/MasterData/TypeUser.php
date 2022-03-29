@@ -28,4 +28,11 @@ class TypeUser extends Model
         'updated_at',
         'deleted_at',
     ];
+    //membuat function berdasarkan tabel yang di tuju 
+    public function detail_user(){
+        //mendeklarasikan tipe dari table
+        return $this->hasMany('App\Models\ManagementAccess\DetailUser','type_user_id');
+        //memberikan parameter pertama lokasi dari tabel yang di tuju dan parameter yang kedua memerikan parameter tujuan field yang di tuju
+        
+    }
 }
